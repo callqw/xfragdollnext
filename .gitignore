@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/src/controllers/ali-oss/privite.js
 /.pnp
 .pnp.js
 .yarn/install-state.gz
