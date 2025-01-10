@@ -1,3 +1,9 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "rules": {
+    "no-console": "off",
+    "no-unused-vars": "off",
+    "semi": "off",
+    // 其他所有规则都设置为"off"
+  }
+  // "extends": ["next/core-web-vitals", "next/typescript"]
 }

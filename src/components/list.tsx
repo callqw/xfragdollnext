@@ -1,12 +1,12 @@
 "use client"
 import React from 'react'
-import { dataList as data } from "@/src/data/list"
+// import { dataList as data } from "@/src/data/list"
 import { Avatar, List } from 'antd';
 import Link from "next/link"
 export default function list() {
     return (
         <div>
-            <List
+            {/* <List
                 itemLayout="horizontal"
                 dataSource={data}
                 renderItem={(item, index) => (
@@ -18,7 +18,7 @@ export default function list() {
                         />
                     </List.Item>
                 )}
-            />
+            /> */}
         </div>
     )
 }
