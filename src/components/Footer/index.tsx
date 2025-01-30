@@ -1,13 +1,15 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import { Row, Col } from 'antd'
 import "./index.scss"
 import Link from 'next/link'
 import Image from 'next/image'
+import { getContext } from '../Context/provider'
 
-export default function Footer({ allData }: any) {
-    console.log(allData, 'footer');
-
+export default function Footer() {
+    const { data } :any= getContext();
+    const [allData, setAllData] = useState(data);
+    
     return (
         <div className='Footer' style={{ margin: "40px 0 20px 0", color: "white", }}>
             <Row >
@@ -24,7 +26,7 @@ export default function Footer({ allData }: any) {
                                 href="/urls.txt">urls</Link></p></div>
 
                 </Col>
-                <Col className='footerCol' xs={24} md={6}>
+                <Col className='footerCol' xs={24} md={6} style={{ paddingLeft: "40px" }}>
                     <div className='fotterMargin'>
                         <h1 className='fotterMarginH1'>联系我们</h1>
                     </div>
@@ -32,11 +34,11 @@ export default function Footer({ allData }: any) {
                     <div className='fotterMargin'><p>微博：<Link target="_blank" href="https://weibo.com/u/6703935390">点击跳转</Link></p></div>
                     <div className='fotterMargin'><p>微信小程序搜索: <span style={{ marginLeft: "20px" }}>幸福布偶猫舍</span></p></div>
                 </Col>
-                <Col className='footerCol' xs={24} md={6}>
+                <Col className='footerCol' xs={24} md={6} style={{ paddingLeft: "40px" }}>
                     <div className='fotterMargin'><h3 className='fotterMarginH1' style={{ textAlign: "center" }}>微信</h3></div>
-                    <div style={{ textAlign: "center" }}><Image  width={100} height={100} alt={allData.script[13].name} style={{ width: "auto", margin: "0 auto" }} src={allData.script[13].url} /></div>
+                    <div style={{ textAlign: "center" }}><Image width={100} height={100} alt={allData.script[13].name} style={{ width: "auto", margin: "0 auto" }} src={allData.script[13].url} /></div>
                 </Col>
-                <Col className='footerCol' xs={24} md={6}>
+                <Col className='footerCol' xs={24} md={6} style={{ paddingLeft: "40px" }}>
                     <div className='fotterMargin'><h3 className='fotterMarginH1' style={{ textAlign: "center" }}>小程序</h3></div>
                     <div style={{ textAlign: "center" }}><Image width={100} height={100} alt={allData.script[14].name} style={{ width: "auto", margin: "0 auto" }} src={allData.script[14].url} /></div>
                 </Col>

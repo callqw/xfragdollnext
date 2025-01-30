@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/modules/link.js", "src/modules/db.js", "src/app/api/getData/route.TS"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/modules/link.js", "src/modules/db.js", "src/app/api/getData/route.TS", "src/controllers/news.js", "src/controllers/publicStore.js", "src/controllers/data.js"],
   "exclude": ["node_modules"]
 }

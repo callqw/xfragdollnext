@@ -6,7 +6,8 @@ import { AntdRegistry } from '@ant-design/nextjs-registry';
 import Provider from "@/components/Context/provider";
 import React, { Suspense } from "react";
 import "./globals.css";
-import  config  from "@/config";
+import config from "@/config";
+import Footer from "@/components/Footer";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -28,7 +29,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
+
   const data = await fetch(`${config.host}/api/getData`);
   let res = await data.json();
   return (
@@ -39,7 +40,9 @@ export default async function RootLayout({
           <Provider datas={res}>
             <AntdRegistry>
               <Header></Header>
+              <div style={{width:"100%",height:"64px"}}></div>
               {children}
+              <Footer></Footer>
             </AntdRegistry>
           </Provider>
         </React.Suspense>

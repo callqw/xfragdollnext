@@ -3,6 +3,12 @@ declare namespace BASIC {
     alldata?: number;
     Provider: any;
   }
+  type ScriptData = {
+    name: string;
+    num: string;
+    url: string;
+  };
+  type Script = ScriptData[];
   type ImgList = {
     url: string;
   };
@@ -48,21 +54,21 @@ declare namespace BASIC {
     keywords: string;
     title: string;
   };
-
+  type Date = { val: string };
   type NewsData = {
     data: Data[] | null;
-    date: { val: string };
+    date: Date;
     Link: Link;
     Seo: Seo;
     err?: number;
     msg?: string;
   };
   type IndexData = NewsData & {
-    zhongmu?:any
-    zhonggong?:any
-    youmao?:any
-    title?:any
-    maoshezhanshi?:any;
+    zhongmu?: any;
+    zhonggong?: any;
+    youmao?: any;
+    title?: any;
+    maoshezhanshi?: any;
     id?: number;
     data?: any;
     Provider: any;

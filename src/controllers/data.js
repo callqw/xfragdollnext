@@ -2,6 +2,7 @@ import ossPrivie from '@/controllers/ali-oss/privite';
 const moment = require('moment');
 const CircularJSON = require('circular-json');
 const Link = require('@/modules/link');
+let script = require('./publicStore');
 export const selectAllData = function () {
 
 
@@ -48,20 +49,20 @@ export const selectAllData = function () {
         { address: 'beila', name: '客厅贝拉', url: 'https://yxcx.oss-cn-beijing.aliyuncs.com/yxcximg/banner/xfRagdoll/1593593775149' },
     ];
     let title = [{
-        name: '种公展示', url: 'https://yxcx.oss-cn-beijing.aliyuncs.com/yxcximg/banner/xfRagdoll/1592404359854',content:ossPrivie.privie(zhonggong)
+        name: '种公展示', url: 'https://yxcx.oss-cn-beijing.aliyuncs.com/yxcximg/banner/xfRagdoll/1592404359854'
     }, {
-        name: '种母展示', url: 'https://yxcx.oss-cn-beijing.aliyuncs.com/yxcximg/banner/xfRagdoll/1592404683114',content:ossPrivie.privie(zhongmu)
+        name: '种母展示', url: 'https://yxcx.oss-cn-beijing.aliyuncs.com/yxcximg/banner/xfRagdoll/1592404683114'
     }, {
-        name: '幼猫展示', url: 'https://yxcx.oss-cn-beijing.aliyuncs.com/yxcximg/banner/xfRagdoll/1593230110365',content:ossPrivie.privie(youmao)
+        name: '幼猫展示', url: 'https://yxcx.oss-cn-beijing.aliyuncs.com/yxcximg/banner/xfRagdoll/1593230110365'
     }, {
-        name: '猫舍展示', url: 'https://yxcx.oss-cn-beijing.aliyuncs.com/yxcximg/banner/xfRagdoll/1592405156738',content:ossPrivie.privie(maoshezhanshi)
+        name: '猫舍展示', url: 'https://yxcx.oss-cn-beijing.aliyuncs.com/yxcximg/banner/xfRagdoll/1592405156738'
     }]
-    return new Promise<void>(async(resolve, reject) => {
+    return new Promise(async(resolve, reject) => {
         title = ossPrivie.privie(title);
-        // zhonggong = ossPrivie.privie(zhonggong);
-        // zhongmu = ossPrivie.privie(zhongmu);
-        // youmao = ossPrivie.privie(youmao);
-        // maoshezhanshi = ossPrivie.privie(maoshezhanshi);
+        zhonggong = ossPrivie.privie(zhonggong);
+        zhongmu = ossPrivie.privie(zhongmu);
+        youmao = ossPrivie.privie(youmao);
+        maoshezhanshi = ossPrivie.privie(maoshezhanshi);
         var dateVal = moment(Date.now()).format('YYYY-MM-DD HH:mm:ss');
         let data = {
             seo: {
@@ -78,10 +79,11 @@ export const selectAllData = function () {
             // awaitSale: await CatTemplate.SelectAllCatTemplate({ page: 1 }),
             // video: await video.SelectAllNews({ page: 1 }),
             title: title,
-            // zhonggong: CircularJSON.parse(CircularJSON.stringify(zhonggong)),
-            // zhongmu: CircularJSON.parse(CircularJSON.stringify(zhongmu)),
-            // youmao: CircularJSON.parse(CircularJSON.stringify(youmao)),
-            // maoshezhanshi: CircularJSON.parse(CircularJSON.stringify(maoshezhanshi))
+            zhonggong: CircularJSON.parse(CircularJSON.stringify(zhonggong)),
+            zhongmu: CircularJSON.parse(CircularJSON.stringify(zhongmu)),
+            youmao: CircularJSON.parse(CircularJSON.stringify(youmao)),
+            maoshezhanshi: CircularJSON.parse(CircularJSON.stringify(maoshezhanshi)),
+            script: script.script()
         }
         resolve(CircularJSON.parse(CircularJSON.stringify(data)))
     })

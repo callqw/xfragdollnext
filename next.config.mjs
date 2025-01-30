@@ -11,6 +11,9 @@ const nextConfig = {
       {
         hostname: 'yxcx.oss-cn-beijing.aliyuncs.com',
       },
+      {
+        hostname: 'gw.alipayobjects.com',
+      },
     ],
   },
   

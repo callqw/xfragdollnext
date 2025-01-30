@@ -25,11 +25,11 @@ const CONF = {
    * 开发环境下，MySQL 的初始密码为您的微信小程序 appid
    */
   mysql: {
-    host: "localhost",
+    host: "www.xfragdoll.com",
     port: 3306,
     user: "root",
     db: "xfragdoll",
-    pass: "",
+    pass: "Callqw1234567",
     char: "utf8mb4",
   },
   cos: {

@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link";
+import './index.scss'
 import React, { useState } from 'react';
 import Image from "next/image";
 import { AppstoreOutlined, MailOutlined, SettingOutlined, SmileOutlined } from '@ant-design/icons';
@@ -57,7 +58,7 @@ export default function Index() {
     };
     return (
         <div>
-            <Header
+            <Header className="contentHeader"
                 style={{
                     display: 'flex',
                     alignItems: 'center',
